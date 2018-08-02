@@ -115,6 +115,7 @@ class SampleRecordsCLR implements CommandLineRunner {
 @RepositoryRestResource
 interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
+	//http://localhost:8000/reservations/search/by-name?rn=Josh
 	@RestResource(path = "by-name")
 	Collection<Reservation> findByReservationName(@Param("rn") String rn);
 }
